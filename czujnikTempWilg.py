@@ -13,7 +13,7 @@ c = conn.cursor()
 
 CzujnikDeszczuPin = 11 #pin11
 CzujnikTempWilgPin = 27 #pin13, ale trzeba podac wprost do DHT
-CzujnikWilgGleby = 15 #pin 15, nie wiem czy zadziala
+CzujnikWilgGleby = 15 #pin 15
 
 def create_table():
     c.execute('CREATE TABLE IF NOT EXISTS pomiary(Czas_pomiaru TEXT, Temperatura_powietrza REAL, Wilgotnosc_powietrza REAL, Wilgotnosc_gleby BOOLEAN, Opady BOOLEAN)')
