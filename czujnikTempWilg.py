@@ -6,10 +6,12 @@ from time import sleep
 
 CzujnikDeszczuPin = 11 #pin11
 CzujnikTempWilgPin = 27 #pin13, ale trzeba podac wprost do DHT
+CzujnikWilgGleby = 15 #pin 15, nie wiem czy zadziala
 
 def setup():
   GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
   GPIO.setup(CzujnikDeszczuPin, GPIO.IN)   # Set LedPin's mode is output  GPIO.setmode(GPIO.BOARD)
+  GPIO.setup(CzujnikWilgGleby, GPIO.IN)
 def destroy():
   GPIO.cleanup()
 def czytajTemp():
@@ -25,6 +27,9 @@ def czytajTemp():
            
         czyDeszcz = not GPIO.input(CzujnikDeszczuPin)
         print("Pada deszcz: ", czyDeszcz)
+        
+        wilg = not GPIO.input(CzujnikWilgGleby)
+        print("Wilgotnosc gleby: ", wilg)
         
         sleep(1)
 
