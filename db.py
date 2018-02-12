@@ -20,7 +20,9 @@ def insert():
 def select():
     c.execute("SELECT * FROM pomiary")
     data = c.fetchall()
-    print(data)
+    for row in data:
+        print(row)
+    #print(data)
 
 
 conn = sqlite3.connect('pomiary.db')

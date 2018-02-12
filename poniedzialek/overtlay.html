@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+	
+}
+html{
+ /*
+ background-image: url('https://static.pexels.com/photos/388415/pexels-photo-388415.jpeg');
+ height: 100%;
+ background-size: cover;
+ position: relative;
+*/
+  background-color: #ffe066;
+}
+
+
+
+body {
+    margin: 10;
+
+
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+
+
+.container {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+
+<h1>Panel kontrolny stacji pogodowej</h1>
+<p>Hover over the image to see the effect.</p>
+
+
+
+
+<div class="row">
+  <div class="column" >
+
+<div class="container">
+<a href="aktualne2.html">
+  <img src="img/termometr2.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Aktualne pomiary<br><i class="fa fa-thermometer-3"></i></div>
+  </div>
+</a>
+</div>
+
+
+  </div>
+  <div class="column">
+
+
+<div class="container">
+<a href="https://www.anonimowe.pl">
+  <img src="img/kalendarz.jpg" alt="Avatar" class="image">
+  <div class="overlay" style="background-color:#669900;">
+    <div class="text">Historia pomiarów<br><i class="fa fa-bar-chart"></i></div>
+	
+  </div>
+</a>
+</div>
+   
+
+
+  </div>
+  <div class="column">
+
+
+
+<div class="container">
+<a href="https://www.anonimowe.pl"`>
+  <img src="img/podlewanie.png" alt="Avatar" class="image">
+  <div class="overlay" style="background-color:#862d59;">
+    <div class="text">Podlewanie<br><i class="fa fa-shower"></i></div>
+
+
+  </div>
+</a>
+</div>
+
+
+
+  </div>
+</div>
+
+</body>
+</html>

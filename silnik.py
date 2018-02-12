@@ -9,24 +9,26 @@ Pompka = 16
 def setup():
     GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
     GPIO.setup(Pompka, GPIO.OUT)   # Set LedPin's mode is output  GPIO.setmode(GPIO.BOARD)
+    GPIO.output(Pompka, GPIO.LOW)  # led off
     
 
 def destroy():
     GPIO.cleanup()
     
 def pracaPompki(sygnal):
-    while(1):
-        if sygnal == True:
-            GPIO.output(Pompka, GPIO.HIGH)  # led on
-            ##sleep(5)
-            ##GPIO.output(Pompka, GPIO.LOW)  # led off
-        else:
-            sleep(5)
+    if sygnal == True:
+        GPIO.output(Pompka, GPIO.HIGH)  # led on
+        sleep(5)
+        GPIO.output(Pompka, GPIO.LOW)  # led off
+    else:
+        GPIO.output(Pompka, GPIO.LOW)  # led off
+        sleep(5)
         
 if __name__ == '__main__':     # Program start from here
   setup()
   try:
-    pracaPompki(True)
+    while(1):
+        pracaPompki(False)
   except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
     destroy()
         

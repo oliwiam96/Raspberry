@@ -10,9 +10,13 @@ def select():
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('glowna.html')
     
 
+@app.route('/aktualne')
+def aktualne():
+    return render_template('aktualne.html', temp = "30", wilg =12.3, opady="Tak", gleba="Nie")
+    
 @app.route('/halo')
 def halo():
     conn = sqlite3.connect('../pomiary.db')
@@ -28,6 +32,7 @@ def halo():
     conn.close()
     
     return wynik
+    
     #return str(data)
 
 @app.route('/hello/<name>')
