@@ -21,8 +21,7 @@ p {
 
 .blue-bg {
   position: fixed;
-  background: url('static/pole.jpg');
-  //background: url('static', filename='pole.jpg');
+  background: url(img/pole.jpg);
   background-size: cover;
   background-color: #58aff6;
   top: 0;
@@ -47,7 +46,7 @@ p {
 .content {
   position: absolute;
   top: 0;
-  margin: 275px 10vw;
+  margin: 265px 10vw;
   max-width: 80vw;
   background-color: #fff;
 }
@@ -55,6 +54,65 @@ p {
 .shadow {
   -webkit-box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
           box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 
@@ -137,94 +195,10 @@ body {
   text-align: center;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {display:none;}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-
 
 </style>
 </head>
 <body>
-
-<script>
-	function klik(){
-	 if(document.getElementById("myDIV").checked == true)
-         {
-		window.location.href="./on";
-	 }
-	 else{
-		window.location.href="./off";
-	 }
-		
-	}
-
-
-	function poczatek(){
-	
-	 if(window.location.href.indexOf("on") > -1){
-		document.getElementById("myDIV").checked = true;
-	 }
-	 else{
-		document.getElementById("myDIV").checked = false;
-		
-	 }
-	}
-	window.onload = poczatek;
-
-</script>
 
 
 <div class="blue-bg"></div>
@@ -236,10 +210,10 @@ input:checked + .slider:before {
   <div class="column" >
 
 <div class="container">
-<a href="./aktualne">
-  <img src="{{url_for('static', filename='termometr2.jpg')}}" alt="Avatar" class="image"/>
+<a href="aktualne2.html">
+  <img src="img/termometr2.jpg" alt="Avatar" class="image">
   <div class="overlay">
-    <div class="text">Ostatni pomiar<br><i class="fa fa-thermometer-3"></i></div>
+    <div class="text">Aktualne pomiary<br><i class="fa fa-thermometer-3"></i></div>
   </div>
 </a>
 </div>
@@ -250,10 +224,10 @@ input:checked + .slider:before {
 
 
 <div class="container">
-<a href="./wykres">
-  <img src="{{url_for('static', filename='kalendarz.jpg')}}" alt="Avatar" class="image"/>
+<a href="https://www.anonimowe.pl">
+  <img src="img/kalendarz.jpg" alt="Avatar" class="image">
   <div class="overlay" style="background-color:#669900;">
-    <div class="text">Historia pomiarow<br><i class="fa fa-bar-chart"></i></div>
+    <div class="text">Historia pomiarów<br><i class="fa fa-bar-chart"></i></div>
 	
   </div>
 </a>
@@ -267,17 +241,16 @@ input:checked + .slider:before {
 
 
 <div class="container">
-  <img src="{{url_for('static', filename='podlewanie.png')}}" alt="Avatar" class="image"/>
+  <img src="img/podlewanie.png" alt="Avatar" class="image">
   <div class="overlay" style="background-color:#862d59;">
-    <div class="text">Podlewanie<br>
-       <i class="fa fa-shower"></i>
-       <br>
-       <br>
+    <div class="text">Podlewanie<br><i class="fa fa-shower"></i><br>
 	<label class="switch">
-         <input type="checkbox" id = "myDIV" onclick="klik();">
-         <span class="slider round"></span>
-        </label>
-    </div>
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+
+     </div>
 
 
   </div>
