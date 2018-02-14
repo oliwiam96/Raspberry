@@ -18,17 +18,15 @@ def destroy():
 def pracaPompki(sygnal):
     if sygnal == True:
         GPIO.output(Pompka, GPIO.HIGH)  # led on
-        sleep(5)
-        GPIO.output(Pompka, GPIO.LOW)  # led off
     else:
         GPIO.output(Pompka, GPIO.LOW)  # led off
-        sleep(5)
+        
         
 if __name__ == '__main__':     # Program start from here
   setup()
   try:
     while(1):
-        pracaPompki(False)
+        pracaPompki(True)
   except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
     destroy()
         

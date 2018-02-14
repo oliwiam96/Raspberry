@@ -90,6 +90,9 @@ body {
     .column {
         width: 100%;
     }
+    .white-bg{
+        min-height:1150px;
+    }
 }
 
 
@@ -171,7 +174,7 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #4d001f;
 }
 
 input:focus + .slider {
@@ -250,7 +253,7 @@ input:checked + .slider:before {
 
 
 <div class="container">
-<a href="./wykres">
+<a href="./graph">
   <img src="{{url_for('static', filename='kalendarz.jpg')}}" alt="Avatar" class="image"/>
   <div class="overlay" style="background-color:#669900;">
     <div class="text">Historia pomiarow<br><i class="fa fa-bar-chart"></i></div>

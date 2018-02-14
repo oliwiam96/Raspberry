@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Ostatnie pomiary Temperatury powietrza</h1>
+
+<div id="linechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+Czas = ['2018-02-01', '2018-02-02', '2018-02-03', '2018-02-04', '2018-02-05']
+Temp = [5, 4, 3, 2, 1]
+Wilg = [3, 5, 7, 9, 11]
+Opady = [0, 0, 1, 1, 0]
+Gleba = [1, 0, 1, 1, 1]
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Czas_pomiaru', 'Temperatura[*C]' ],
+  [Czas[0], Temp[0]],
+  [Czas[1], Temp[1]],
+  [Czas[2], Temp[2]],
+  [Czas[3], Temp[3]],
+  [Czas[4], Temp[4]]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {
+        title: 'Pomiary temperatury powietrza',
+        width: 900,
+        height: 500,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0},
+          //1: {targetAxisIndex: 1},
+	  //2: {targetAxisIndex: 2},
+	  //3: {targetAxisIndex: 3},
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Temperatura powietrza (Celsius)'},
+          //1: {title: 'Wilgotnosc powietrza [%]'},
+	  //2: {title: 'Opady'},
+	  //3: {title: 'Wilgotnosc gleby'}
+        },
+        hAxis: {
+        },
+        vAxis: {
+          viewWindow: {
+            max: 50
+          }
+        }
+      };
+  //var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+  chart.draw(data, options);
+}
+</script>
+
+<h1>Ostatnie pomiary wilgotnoœci powietrza</h1>
+
+<div id="linechart3"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+Czas = ['2018-02-01', '2018-02-02', '2018-02-03', '2018-02-04', '2018-02-05']
+Temp = [5, 4, 3, 2, 1]
+Wilg = [3, 5, 7, 9, 11]
+Opady = [0, 0, 1, 1, 0]
+Gleba = [1, 0, 1, 1, 1]
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Czas_pomiaru', 'Wilgotnosc [%]' ],
+  [Czas[0], Wilg[0]],
+  [Czas[1], Wilg[1]],
+  [Czas[2], Wilg[2]],
+  [Czas[3], Wilg[3]],
+  [Czas[4], Wilg[4]]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {
+        title: 'Pomiary wilgotnosci powietrza',
+        width: 900,
+        height: 500,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0},
+          //1: {targetAxisIndex: 1},
+	  //2: {targetAxisIndex: 2},
+	  //3: {targetAxisIndex: 3},
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          //0: {title: 'Temperatura powietrza (Celsius)'},
+          0: {title: 'Wilgotnosc powietrza [%]'},
+	  //2: {title: 'Opady'},
+	  //3: {title: 'Wilgotnosc gleby'}
+        },
+        hAxis: {
+        },
+        vAxis: {
+          viewWindow: {
+            max: 100
+          }
+        }
+      };
+  //var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.LineChart(document.getElementById('linechart3'));
+  chart.draw(data, options);
+}
+</script>
+
+<h1>Ostatnie Pomiary opadów i wiglotnoœci gleby</h1>
+
+<div id="scatterchart2"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+Czas = ['2018-02-01', '2018-02-02', '2018-02-03', '2018-02-04', '2018-02-05']
+Temp = [5, 4, 3, 2, 1]
+Wilg = [3, 5, 7, 9, 11]
+Opady = [0, 0, 1, 1, 0]
+Gleba = [1, 0, 1, 1, 1]
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Czas_pomiaru', 'Opady', 'Wilgotnosc gleby' ],
+  [Czas[0], Opady[0], Gleba[0]],
+  [Czas[1], Opady[1], Gleba[1]],
+  [Czas[2], Opady[2], Gleba[2]],
+  [Czas[3], Opady[3], Gleba[3]],
+  [Czas[4], Opady[4], Gleba[4]]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {
+        title: 'Pomiary opadów i wilgotnoœci gleby',
+        width: 900,
+        height: 500,
+        
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          //0: {targetAxisIndex: 0},
+          //1: {targetAxisIndex: 1},
+	  0: {targetAxisIndex: 0, pointSize: 22},
+	  1: {targetAxisIndex: 1, pointSize: 8},
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          //0: {title: 'Temperatura powietrza (Celsius)'},
+          //1: {title: 'Wilgotnosc powietrza [%]'},
+	  0: {title: 'Opady'},
+	  1: {title: 'Wilgotnosc gleby'}
+        },
+        hAxis: {
+        },
+        vAxis: {
+          viewWindow: {
+            max: 1
+          }
+        }
+      };
+  //var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.ScatterChart(document.getElementById('scatterchart2'));
+  chart.draw(data, options);
+}
+</script>
+
+</body>
+</html>
